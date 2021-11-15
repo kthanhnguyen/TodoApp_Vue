@@ -1,0 +1,47 @@
+$color-wht: #ffffff;
+$color-bla: #020202;
+
+body {
+  background-color: #ccc;
+}
+
+.wrapper {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.container {
+  background-color: $color-wht;
+}
+
+h1 {
+  color: $color-wht;
+  font-size: 4.2rem;
+  margin-bottom: 15px;
+}
+
+.header {
+  display: flex;
+  background: #f2f2f2;
+  padding: 5px 10px;
+  p {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+    background: #3e82c3;
+    border-radius: 15px;
+    padding: .3rem .4rem;
+    color: $color-wht;
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: $color-wht;
+      color: $color-bla;
+      border-radius: 15px;
+      width: 1.2rem;
+      height: 1.2rem;
+      margin-left: 5px;
+    }
+  }
+}
