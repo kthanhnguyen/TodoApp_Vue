@@ -1,0 +1,50 @@
+
+2 way binding
+
+Binding:
+  + Value binding: {{  }}
+  + property binding:
+    + v-bind ( viêt tắt :[tên biến])
+  + style và class binding
+
+Model:
+  + Liên kết element với property
+
+Event Handle:
+  + v-on (viết tắt @[event])
+  + prevent default evnt: Hủy bỏ event mặc định của element
+
+ref:
+  + chính là id của element
+    var a = document.getElementbyId('name') 
+    this.$ref.name => element html
+
+Conditional rendering:
+  + v-show: ẩn hiện element theo điều kiện
+  + v-hide: ngược lại với v-show
+  + v-if: doSomething theo điều kiện
+  + v-else
+
+List rendering:
+  + v-for
+  + v-for="(item, index) in lists" :key="index"
+
+methods:
+  + Hàm của vue object
+
+watch:
+  + Theo dõi dự thay đổi của data
+
+hooks:
+  + mounted
+
+Props:
+  + Component cha => con
+  + Component con => cha
+
+filters:
+ + Biến đổi data trước khi render, nhưng data vẫn giữ nguyên
+
+Validiton:
+  + Vee
+  

@@ -8,7 +8,7 @@
       </div>
       <div class="main">
         <ul>
-          <li v-for="todo in todos">
+          <li v-for="todo in todos" :key="todo.id">
             <ToDoItem :todo="todo"></ToDoItem>
           </li>
         </ul>
