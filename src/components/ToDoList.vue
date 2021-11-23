@@ -7,7 +7,7 @@
       <p>Done: <span>{{todos.filter(todo => {return todo.done === true}).length}}</span></p>
       </div>
       <div class="main">
-        <ul>
+        <ul class="list-task">
           <li v-for="todo in todos" :key="todo.id">
             <ToDoItem :todo="todo"></ToDoItem>
           </li>
@@ -52,6 +52,16 @@ export default {
 };
 </script>
 
-<style lang="scss">
-  @import '../assets/css/main.scss';
+<style lang="scss" scope>
+  @import "../assets/scss/_variables.scss";
+  @import "../assets/scss/_reset.scss";
+  @import "../assets/scss/_common.scss";
+  @import "../assets/scss/_todo.scss";
+
+  .list-task {
+    li {
+      margin-bottom: 10px;
+    }
+  }
+
 </style>

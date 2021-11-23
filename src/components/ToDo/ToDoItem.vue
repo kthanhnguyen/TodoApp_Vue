@@ -1,16 +1,29 @@
 <template>
-  <div class="task-preview">
-    {{ todo.title }}
+  <div class="task-preview" @click="statusCheck = !statusCheck">
+		<div></div>
+		<div for="checkbox" class="task-preview__name"><p>{{ todo.title }}</p></div>
+		<div>{{ statusCheck }}</div>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["todo"]
+	name: 'ToDoItem',
+  props: ["todo"],
+	data: function () {
+		return {
+			statusCheck: false
+		}
+	}
 }
 </script>
 
 <style lang="scss" scoped>
+  @import "../../assets/scss/_variables.scss";
+  @import "../../assets/scss/_reset.scss";
+  @import "../../assets/scss/_common.scss";
+  @import "../../assets/scss/_todo.scss";
+
 	.task-preview {
 		padding: 1rem;
 		display: flex;
