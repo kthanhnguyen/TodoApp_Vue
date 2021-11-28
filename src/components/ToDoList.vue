@@ -12,6 +12,12 @@
             <ToDoItem :todo="todo"></ToDoItem>
           </li>
         </ul>
+        <div class="list-task-add">
+          <form @submit="addTask">
+            <input type="text" v-model="taskName" placeholder="Task name">
+            <button>Add</button>
+          </form>
+        </div>
       </div>
     </div>
   </div>
@@ -20,36 +26,51 @@
 <script>
 import ToDoItem from './ToDo/ToDoItem'
 export default {
-  name: "ToDoList",
+  name: 'ToDoList',
   components: {
     'ToDoItem': ToDoItem
   },
-  data() {
-  return {
-    todos: [{
-      id: 1,
-      title: 'Todo A',
-      project: 'Project A',
-      done: false,
-    }, {
-      id: 2,
-      title: 'Todo B',
-      project: 'Project B',
-      done: true,
-    }, {
-      id: 3,
-      title: 'Todo C',
-      project: 'Project C',
-      done: false,
-    }, {
-      id: 4,
-      title: 'Todo D',
-      project: 'Project D',
-      done: false,
-    }],
-  };
+  data () {
+    return {
+      taskName: null,
+      todos: [{
+        id: 1,
+        title: 'Todo A',
+        project: 'Project A',
+        done: true
+      }, {
+        id: 2,
+        title: 'Todo B',
+        project: 'Project B',
+        done: false
+      }, {
+        id: 3,
+        title: 'Todo C',
+        project: 'Project C',
+        done: false
+      }, {
+        id: 4,
+        title: 'Todo D',
+        project: 'Project D',
+        done: false
+      }]
+    }
+  },
+  methods: {
+    addTask (e) {
+      e.preventDefault()
+      console.log(this.taskName)
+      let newToDo = {
+        id: 12,
+        title: this.taskName,
+        project: this.taskName,
+        done: false
+      }
+      this.todos = [...this.todos, newToDo]
+      console.log(this.todos)
+    }
+  }
 }
-};
 </script>
 
 <style lang="scss" scope>
